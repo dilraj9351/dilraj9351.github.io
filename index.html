@@ -2,73 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dilraj — Modern Web Developer</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dilraj — Fast & Clean Websites</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-<nav class="site-nav">
+<nav>
   <div class="container nav-inner">
     <a class="brand" href="#">Dilraj</a>
     <div class="nav-links">
       <a href="#portfolio">Portfolio</a>
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
-      <a class="btn small" href="#contact">Hire</a>
-      <button id="darkToggle" class="btn small" type="button">Dark</button>
     </div>
   </div>
 </nav>
 
 <!-- HERO SECTION -->
-<section class="hero">
+<section class="hero fade-up">
   <div class="container hero-container">
-    <div class="hero-left">
+    <div class="hero-left fade-up">
       <h1>Dilraj — Fast & Clean Websites</h1>
       <p class="lead">I build responsive landing pages and fix website issues quickly. Ready to deploy.</p>
       <a href="#contact" class="btn">Get Started</a>
     </div>
 
-    <div class="hero-right">
-      <img id="hero-img" src="https://images.unsplash.com/photo-1506765515384-028b60a970df?w=1200&q=80&auto=format&fit=crop" alt="Hero Image">
-  </div>
+    <div class="hero-right fade-up">
+      <img id="hero-img" src="https://images.unsplash.com/photo-1506765515384-028b60a970d7?w=1200&q=80"
+           alt="hero image">
+    </div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="section">
+<section id="services" class="section fade-up">
   <div class="container">
     <h2>Services</h2>
+
     <div class="cards">
-      <div class="card">
+
+      <div class="card fade-up">
         <h3>Landing Pages</h3>
         <p>Fast, responsive and SEO-ready.</p>
       </div>
 
-      <div class="card">
+      <div class="card fade-up">
         <h3>Bug Fixing</h3>
-        <p>Fix layout, CSS, UI, and responsive issues.</p>
+        <p>Fix layout, CSS, UI and responsive issues.</p>
       </div>
 
-      <div class="card">
+      <div class="card fade-up">
         <h3>Custom Websites</h3>
         <p>Perfect for portfolios and business owners.</p>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- CONTACT FORM -->
-<section id="contact" class="section">
+<section id="contact" class="section fade-up">
   <div class="container">
     <h2>Contact Me</h2>
 
     <form id="contactForm" action="https://formspree.io/f/xbjqzjrl" method="POST">
-      <input type="text" name="name" placeholder="Your name" required />
-      <input type="email" name="email" placeholder="Email" required />
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Email" required>
       <textarea name="message" placeholder="Message" required></textarea>
       <button class="btn" type="submit">Send</button>
     </form>
@@ -76,6 +78,13 @@
     <p id="status"></p>
   </div>
 </section>
+
+<!-- FOOTER -->
+<footer class="footer fade-up">
+  <div class="container">
+    <p>© 2025 Dilraj — All rights reserved.</p>
+  </div>
+</footer>
 
 <script src="script.js"></script>
 </body>
