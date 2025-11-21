@@ -182,3 +182,4 @@ a:focus, button:focus, input:focus, textarea:focus{outline:3px solid rgba(11,99,
 /* ---- minor helpers ---- */
 .text-center{text-align:center}
 .small{font-size:13px;color:var(--muted)}
+#hero-img { opacity: 1 !important; display:block !important; max-height:320px; width:100%; object-fit:cover; }
