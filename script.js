@@ -1,56 +1,86 @@
-// CONTACT FORM HANDLER
-const form = document.getElementById("contactForm");
-const statusText = document.getElementById("status");
+// script.js
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault(); // stop page reload
-
-  statusText.innerHTML = "Sending...";
-  statusText.style.color = "#0b63f6";
-
-  const formData = new FormData(form);
-
-  try {
-    const response = await fetch(form.action, {
-      method: "POST",
-      body: formData,
-      headers: { Accept: "application/json" }
+document.addEventListener('DOMContentLoaded', () => {
+  /* ---------- Reveal on scroll ---------- */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
     });
+  }, { threshold: 0.12 });
 
-    if (response.ok) {
-      form.reset();
-      statusText.innerHTML = "Message sent successfully! 🎉";
-      statusText.style.color = "green";
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* ---------- Dark mode toggle ---------- */
+  const themeToggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+  const saved = localStorage.getItem('site-theme');
+
+  function applyTheme(t){
+    if (t === 'dark'){
+      root.setAttribute('data-theme', 'dark');
+      themeToggle.textContent = '☀️';
+      themeToggle.setAttribute('aria-pressed','true');
     } else {
-      statusText.innerHTML = "Failed to send. Try again!";
-      statusText.style.color = "red";
+      root.removeAttribute('data-theme');
+      themeToggle.textContent = '🌙';
+      themeToggle.setAttribute('aria-pressed','false');
     }
-  } catch (error) {
-    statusText.innerHTML = "Network error! Please try later.";
-    statusText.style.color = "red";
   }
-});
-// ===== reveal on scroll (robust) =====
-function revealOnScroll() {
-  const revealElems = document.querySelectorAll('.fade-up, .cards .card, .portfolio-item, #hero-img, .footer.fade-up');
-  revealElems.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < (window.innerHeight - 80)) {
-      el.classList.add('visible');
-    }
+
+  // initial
+  if (saved) applyTheme(saved);
+  else {
+    // respect prefers-color-scheme if no saved
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark ? 'dark' : 'light');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    applyTheme(next);
+    localStorage.setItem('site-theme', next);
   });
-}
 
-// initial show on load
-window.addEventListener('load', () => {
-  // small timeout so first paint occurs
-  setTimeout(() => {
-    revealOnScroll();
-  }, 120);
-  // ensure hero image visible quickly
-  document.querySelector('#hero-img')?.classList.add('visible');
+  /* ---------- Contact Form (Formspree) ---------- */
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+
+  function showToast(msg, ok = true){
+    status.textContent = msg;
+    status.style.background = ok ? '#16a34a' : '#c53030';
+    status.hidden = false;
+    setTimeout(()=> status.hidden = true, 3500);
+  }
+
+  if (form){
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok){
+          showToast('Message sent successfully ✅');
+          form.reset();
+        } else {
+          showToast('Could not send. Try again later.', false);
+        }
+      } catch (err){
+        console.error(err);
+        showToast('Network error. Try again.', false);
+      }
+    });
+  }
+
+  /* ---------- Small: ensure whatsapp visible on load ---------- */
+  const whatsapp = document.getElementById('whatsappBtn');
+  if (whatsapp) whatsapp.style.display = 'flex';
 });
-
-// on scroll + resize
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('resize', revealOnScroll);
