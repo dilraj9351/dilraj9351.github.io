@@ -171,3 +171,26 @@ footer {
   #whatsappBtn{ width:48px;height:48px; right:14px; bottom:14px; }
   #whatsappBtn::before{ font-size:20px; line-height:48px; }
 }
+/* PORTFOLIO SECTION */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.portfolio-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
