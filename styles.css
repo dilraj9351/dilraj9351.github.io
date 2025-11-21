@@ -115,3 +115,8 @@ textarea{min-height:100px;resize:vertical}
   padding: 20px 0;
   color: #777;
 }
+.card:hover {
+  transform: translateY(-4px);
+  transition: 0.2s;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
