@@ -84,3 +84,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const whatsapp = document.getElementById('whatsappBtn');
   if (whatsapp) whatsapp.style.display = 'flex';
 });
+// NAVBAR: toggle mobile menu
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle?.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
+
+// add scrolled class when user scrolls
+const siteNav = document.querySelector('.site-nav');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 30) siteNav?.classList.add('scrolled');
+  else siteNav?.classList.remove('scrolled');
+});
+
+// highlight active nav link while scrolling to sections
+const navAnchors = document.querySelectorAll('.nav-link');
+const sections = Array.from(navAnchors).map(a => document.querySelector(a.getAttribute('href')));
+function onScrollActive(){
+  const y = window.scrollY + 120; // offset to detect section
+  sections.forEach((sec, i) => {
+    if(!sec) return;
+    const top = sec.offsetTop;
+    const bottom = top + sec.offsetHeight;
+    if(y >= top && y < bottom){
+      navAnchors.forEach(a => a.classList.remove('active'));
+      navAnchors[i].classList.add('active');
+    }
+  });
+}
+window.addEventListener('scroll', onScrollActive);
+document.addEventListener('DOMContentLoaded', onScrollActive);
