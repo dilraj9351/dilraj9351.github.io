@@ -192,6 +192,28 @@
 
 <a id="whatsappBtn" class="btn primary" target="_blank">Contact on WhatsApp</a>
       <div id="upiButtons">
+          <!-- payment area (add inside hireModal, under selectedPlanText) -->
+<div id="paymentArea" class="payment-area">
+  <p class="lead">Pay via UPI</p>
+
+  <div class="upi-row">
+    <button id="copyUpiBtn" class="btn upi-btn">Copy UPI ID</button>
+    <button id="showQrBtn" class="btn upi-qr-btn" aria-expanded="false">Show QR</button>
+  </div>
+
+  <p class="upi-id" id="upiText">9351996276@ibl</p>
+
+  <!-- QR modal (simple) -->
+  <div id="qrModal" class="qr-modal" aria-hidden="true">
+    <div class="qr-panel">
+      <button id="qrClose" class="qr-close" aria-label="Close">✕</button>
+      <h3>Scan to pay (UPI)</h3>
+      <img id="qrImage" alt="UPI QR" src="" />
+      <p class="qr-note">Open your UPI app → Scan QR → Pay</p>
+      <button id="copyUpiBtn2" class="btn upi-btn">Copy UPI ID</button>
+    </div>
+  </div>
+</div>
     <a id="upiStarter" href="upi://pay?pa=9351996276@ibl&pn=Dilraj&am=999&cu=INR" 
        class="btn primary" target="_blank" style="display:none;margin-top:10px;">
        Pay ₹999 (Starter)
