@@ -471,3 +471,23 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') closeHireModal();
   });
 });
+// Show UPI button based on plan
+document.querySelectorAll(".hire-btn").forEach(button => {
+    button.addEventListener("click", () => {
+        const plan = button.dataset.plan;
+
+        document.getElementById("upiStarter").style.display = "none";
+        document.getElementById("upiBusiness").style.display = "none";
+        document.getElementById("upiPremium").style.display = "none";
+
+        if (plan === "Starter") {
+            document.getElementById("upiStarter").style.display = "block";
+        } 
+        else if (plan === "Business") {
+            document.getElementById("upiBusiness").style.display = "block";
+        } 
+        else if (plan === "Premium") {
+            document.getElementById("upiPremium").style.display = "block";
+        }
+    });
+});
