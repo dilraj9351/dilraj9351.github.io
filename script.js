@@ -148,3 +148,69 @@ document.addEventListener('click', (e) => {
 
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 })();
+/* ===== Contact: success modal + toast handling ===== */
+(function(){
+  const form = document.getElementById('contactForm');
+  const toast = document.getElementById('successToast');
+  const modal = document.getElementById('successModal');
+  const closeBtn = document.getElementById('closeSuccess');
+  const okBtn = document.getElementById('successOk');
+
+  function showToast(msg) {
+    if(!toast) return;
+    toast.textContent = msg || 'Message sent — thanks!';
+    toast.classList.add('show');
+    setTimeout(()=> toast.classList.remove('show'), 3500);
+  }
+
+  function showModal() {
+    if(!modal) return;
+    modal.setAttribute('aria-hidden', 'false');
+  }
+  function hideModal() {
+    if(!modal) return;
+    modal.setAttribute('aria-hidden', 'true');
+  }
+
+  // attach close buttons
+  closeBtn?.addEventListener('click', hideModal);
+  okBtn?.addEventListener('click', hideModal);
+  modal?.addEventListener('click', (e) => {
+    if(e.target === modal) hideModal(); // click backdrop to close
+  });
+
+  // If you already have a custom form handler: we still intercept to show UX
+  if(form){
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      // show temporary sending state (if you have #formStatus)
+      const statusEl = document.getElementById('formStatus') || document.getElementById('status') || null;
+      if(statusEl){ statusEl.textContent = 'Sending...'; statusEl.hidden = false; }
+
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, {
+          method: form.method || 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if(res.ok){
+          // show modal (preferred) then auto-hide after a bit
+          showModal();
+          showToast('Message sent — I will contact you soon!');
+          form.reset();
+          if(statusEl) { statusEl.textContent = ''; statusEl.hidden = true; }
+        } else {
+          // fallback message
+          showToast('Unable to send. Try again later.');
+          if(statusEl) statusEl.textContent = 'Submission failed.';
+        }
+      } catch(err){
+        console.error('Contact submit error', err);
+        showToast('Network error. Try again later.');
+        if(statusEl) statusEl.textContent = 'Network error.';
+      }
+    });
+  }
+})();
