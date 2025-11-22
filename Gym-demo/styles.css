@@ -1,0 +1,26 @@
+:root{--accent:#ff4d6d;--muted:#6b7280}
+*{box-sizing:border-box}body{font-family:Inter,system-ui,Arial;background:#0b1020;color:#f8fafc;margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+.site-header{padding:16px 0}
+.logo{color:#fff;text-decoration:none;font-weight:700}
+.hero{padding:48px 0}
+.gym-hero{background:linear-gradient(135deg,#07132a,#0b1b38)}
+.hero-inner{display:flex;gap:20px;align-items:center}
+.hero-text h1{color:#fff;margin:0 0 8px}
+.hero-text p{color:#cbd5e1;margin:0 0 14px}
+.hero-media img{width:380px;border-radius:12px;box-shadow:0 18px 48px rgba(2,6,23,0.5)}
+.btn{padding:10px 14px;border-radius:10px;text-decoration:none}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.08)}
+.btn.whatsapp{background:#25D366;color:#fff}
+.section{padding:32px 0}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.feature-card{background:#071226;padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.4);color:#fff}
+.site-footer{padding:18px 0;text-align:center;color:#93a3b8;font-size:14px}
+
+/* responsive */
+@media(max-width:880px){
+ .hero-inner{flex-direction:column}
+ .hero-media img{width:86%}
+ .grid-2{grid-template-columns:1fr}
+}
