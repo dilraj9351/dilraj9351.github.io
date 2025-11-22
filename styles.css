@@ -224,3 +224,8 @@ html { scroll-behavior: smooth; }
   opacity:1;
   transform:translateY(0);
 }
+.work-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(22,34,60,0.12);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
