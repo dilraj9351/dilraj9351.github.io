@@ -491,3 +491,80 @@ document.querySelectorAll(".hire-btn").forEach(button => {
         }
     });
 });
+// UPI payment helpers
+(function(){
+  const upiId = '9351996276@ibl'; // change if needed
+  const copyBtns = document.querySelectorAll('#copyUpiBtn, #copyUpiBtn2');
+  const upiTextEl = document.getElementById('upiText');
+  const showQrBtn = document.getElementById('showQrBtn');
+  const qrModal = document.getElementById('qrModal');
+  const qrClose = document.getElementById('qrClose');
+  const qrImage = document.getElementById('qrImage');
+
+  if (upiTextEl) upiTextEl.textContent = upiId;
+
+  // QR generation: use qrserver.com (public)
+  function buildQrUrl(upi) {
+    // UPI deep link format (optional)
+    const upiLink = encodeURIComponent(`upi://pay?pa=${upi}`);
+    return `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${upiLink}`;
+  }
+
+  // set QR src now
+  if (qrImage) qrImage.src = buildQrUrl(upiId);
+
+  // copy helper
+  async function copyUpi() {
+    try {
+      await navigator.clipboard.writeText(upiId);
+      showToast('UPI copied to clipboard');
+    } catch (e) {
+      // fallback: select + prompt
+      const tmp = document.createElement('textarea');
+      tmp.value = upiId;
+      document.body.appendChild(tmp);
+      tmp.select();
+      try { document.execCommand('copy'); showToast('UPI copied to clipboard'); } catch(e2) { alert('Copy this UPI: ' + upiId); }
+      tmp.remove();
+    }
+  }
+
+  // attach copy buttons
+  copyBtns.forEach(b => b && b.addEventListener('click', copyUpi));
+
+  // QR modal open
+  if (showQrBtn) showQrBtn.addEventListener('click', function(){
+    if (!qrModal) return;
+    qrModal.setAttribute('aria-hidden','false');
+    showQrBtn.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+  });
+
+  if (qrClose) qrClose.addEventListener('click', function(){
+    qrModal.setAttribute('aria-hidden','true');
+    showQrBtn.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  });
+
+  // close if click outside panel
+  if (qrModal) qrModal.addEventListener('click', function(e){
+    if (e.target === qrModal) {
+      qrModal.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // tiny toast (if you already have a toast, remove this and call your toast)
+  function showToast(msg) {
+    let t = document.getElementById('__upi_toast');
+    if (!t) {
+      t = document.createElement('div');
+      t.id = '__upi_toast';
+      t.style = 'position:fixed;left:50%;transform:translateX(-50%);bottom:26px;background:#111;color:#fff;padding:10px 16px;border-radius:10px;z-index:2000;opacity:0;transition:all .28s;';
+      document.body.appendChild(t);
+    }
+    t.textContent = msg;
+    t.style.opacity = '1';
+    setTimeout(()=> t.style.opacity = '0', 2000);
+  }
+})();
