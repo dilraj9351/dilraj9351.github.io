@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gym Demo — Premium Fitness</title>
+  <meta name="description" content="Gym website demo with membership, schedule and contact." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="/">Gym Demo</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero gym-hero">
+      <div class="wrap hero-inner">
+        <div class="hero-media">
+          <img src="https://raw.githubusercontent.com/dilraj2880/dilraj2880.github.io/main/portfolio2.png" alt="Gym demo" />
+        </div>
+        <div class="hero-text">
+          <h1>Build your gym's online presence</h1>
+          <p>Membership pages, class schedule, bookings and WhatsApp inquiries.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="https://wa.me/919351996276?text=Hi,%20I%20want%20a%20gym%20website" target="_blank">Get Started ₹1499</a>
+            <a class="btn ghost" href="#contact">View features</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section features">
+      <div class="wrap grid-2">
+        <div class="feature-card">
+          <h3>Membership Plans</h3>
+          <p>Create and show pricing & sign-up form.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Schedule & Booking</h3>
+          <p>Class schedule integrated with booking form.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <a class="btn whatsapp" href="https://wa.me/919351996276?text=Hi,%20I%20want%20a%20gym%20website" target="_blank">Message on WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© <span id="year"></span> Gym Demo — by Dilraj</div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
