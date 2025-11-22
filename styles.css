@@ -756,3 +756,18 @@ body.lb-open { overflow: hidden; }
   margin-top: 10px;
 }
 .modal-actions .btn { min-width:120px; }
+/* ----- UPI payment area ----- */
+.payment-area { margin-top: 18px; }
+.upi-row { display:flex; gap:10px; align-items:center; margin-bottom:8px; }
+.upi-btn { background:linear-gradient(90deg,#10b981,#06b36b); color:#fff; padding:12px 18px; border-radius:12px; box-shadow:0 6px 18px rgba(6,123,67,0.15); border:0; cursor:pointer; font-weight:600; }
+.upi-qr-btn { background:#fff; color:#0b6b4a; border:1px solid #e6e6e6; padding:10px 14px; border-radius:10px; cursor:pointer; }
+
+.upi-id { font-size:14px; color:#223; margin:6px 0 0; }
+
+/* QR modal */
+.qr-modal { position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,0.45); z-index:1200; }
+.qr-modal[aria-hidden="false"] { display:flex; }
+.qr-panel { background:#fff; border-radius:14px; padding:18px; width:320px; max-width:92%; text-align:center; box-shadow:0 30px 80px rgba(15,23,42,0.35); }
+.qr-panel img { width:220px; height:220px; object-fit:contain; margin:10px auto; border-radius:8px; }
+.qr-close { background:transparent; border:0; font-size:20px; float:right; cursor:pointer; color:#333; }
+.qr-note { font-size:13px; color:#666; margin-top:8px; }
