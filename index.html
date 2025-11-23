@@ -296,11 +296,21 @@
       <h2>Contact Me</h2>
 
       <!-- Use your Formspree action (I kept your earlier one). Replace if different. -->
-      <form id="contactForm" action="https://formspree.io/f/xbjqzjrl" method="POST" class="contact-form" novalidate>
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <textarea name="message" placeholder="Message" required></textarea>
-        <button type="submit" class="btn primary">Send</button>
+      <form id="contactForm" action="https://formsubmit.co/dilrajmeena7597@gmail.com" method="POST">
+
+    <!-- Disable Captcha -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Redirect URL -->
+    <input type="hidden" name="_next" value="https://dilraj9351.github.io?success=true">
+
+    <input type="text" name="name" placeholder="Your name" required>
+
+    <input type="email" name="email" placeholder="Email" required>
+
+    <textarea name="message" placeholder="Message" required></textarea>
+
+    <button type="submit" class="btn primary">Send</button>
       </form>
        <!-- CONTACT: Success Modal + Toast -->
 <div id="successModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="successTitle">
