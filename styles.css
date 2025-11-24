@@ -1127,3 +1127,60 @@ body.dark-mode .site-nav { background:#071428; }
 
 /* optional: add hover */
 .chat-btn:hover{ transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.18); }
+/* ===== Floating chat button (keep only one .chat-btn in HTML) ===== */
+.chat-btn{
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 99999;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,#00C853,#00E676); /* green gradient */
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  transform: translateZ(0);
+}
+
+/* chat icon circle */
+.chat-btn .chat-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background: rgba(255,255,255,0.12);
+  flex: 0 0 36px;
+}
+
+/* label */
+.chat-btn .chat-label{
+  font-size:15px;
+  line-height:1;
+  padding-right:6px;
+}
+
+/* small screens: hide label to save space */
+@media (max-width:600px){
+  .chat-btn{
+    right:14px;
+    bottom:14px;
+    padding:8px 10px;
+    gap:8px;
+  }
+  .chat-btn .chat-icon{ width:34px; height:34px; }
+  .chat-btn .chat-label{ display:none; } /* only icon on small screens */
+}
+
+/* keep footer content visible: add extra bottom space */
+footer.footer, .site-footer, .footer {
+  padding-bottom: 120px; /* increase if needed */
+}
+
+/* optional hover */
+.chat-btn:hover{ transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.18); }
