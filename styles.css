@@ -918,3 +918,8 @@ body.lb-open { overflow: hidden; }
     grid-template-columns: repeat(3, 1fr);
   }
 }
+body.dark-mode {
+  background:#0f1724;
+  color:#d7e1ef;
+}
+body.dark-mode .site-nav { background:#071428; }
