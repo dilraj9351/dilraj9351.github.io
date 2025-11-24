@@ -85,52 +85,85 @@ body{background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothi
 
 /* small tweaks */
 a:focus, button:focus, input:focus, textarea:focus{outline:3px solid rgba(11,99,246,0.12);outline-offset:4px}
-/* ====== NAVBAR ====== */
-.site-nav{
+/* ===== NAVBAR (Improved Contrast + Clean) ===== */
+
+.site-nav {
   position: sticky;
   top: 12px;
   z-index: 999;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
   border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(10,20,40,0.06);
+  box-shadow: 0 6px 18px rgba(10, 20, 40, 0.06);
   margin: 12px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
 .site-nav.scrolled {
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(10,20,40,0.12);
+  box-shadow: 0 10px 30px rgba(10, 20, 40, 0.12);
 }
 
 .site-nav .nav-inner {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  padding:12px 18px;
-  max-width:1100px;
-  margin:0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 18px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-/* brand */
-.brand { font-weight:800; font-size:20px; color:var(--text); text-decoration:none; }
+/* brand title */
+.brand {
+  font-weight: 800;
+  font-size: 20px;
+  color: #05386B;
+}
 
-/* desktop links */
+/* nav links */
 .nav-links {
-  display:flex;
-  gap:12px;
-  align-items:center;
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
+
 .nav-link {
-  padding:8px 12px;
-  border-radius:10px;
-  text-decoration:none;
-  color:var(--text);
-  font-weight:600;
-  transition: background 0.18s ease, transform 0.12s ease;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #05386B;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease;
 }
-.nav-link:hover { background: rgba(11,99,246,0.06); transform: translateY(-2px); }
-.nav-link.active { background: linear-gradient(90deg,var(--accent),#0066ff22); color:var(--accent); }
+
+.nav-link:hover {
+  background: rgba(5, 56, 107, 0.08);
+  color: #03263b;
+}
+
+.nav-link.active {
+  background: #05386B;
+  color: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(5, 56, 107, 0.2);
+}
+
+/* dark mode support */
+body.dark-mode .site-nav {
+  background: rgba(10, 20, 40, 0.85);
+}
+
+body.dark-mode .brand {
+  color: #ffffff;
+}
+
+body.dark-mode .nav-link {
+  color: #d8e0ea;
+}
+
+body.dark-mode .nav-link.active {
+  background: #0a64ff;
+}
 
 /* hamburger - mobile */
 .nav-toggle {
