@@ -828,3 +828,60 @@ body.lb-open { overflow: hidden; }
   font-size: 0.85rem;
   color: #666;
 }
+/* ===== portfolio grid responsive + fixed image crop ===== */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+/* card wrapper */
+.portfolio-card {
+  background: transparent;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* link that contains image — make it a block so image fills card */
+.portfolio-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* make images fill card area and crop with object-fit */
+.portfolio-link img,
+.portfolio-card img {
+  display: block;
+  width: 100%;
+  height: 220px;          /* mobile height */
+  max-height: 320px;
+  object-fit: cover;      /* crops nicely without stretching */
+  border-radius: 8px;
+}
+
+/* caption spacing */
+.portfolio-card h4 {
+  margin: 10px 0 6px;
+  font-size: 1.05rem;
+}
+.portfolio-card .small-desc {
+  margin: 0 0 14px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* larger screens: taller images and 3-column layout */
+@media(min-width: 900px) {
+  .portfolio-link img,
+  .portfolio-card img {
+    height: 280px;
+    max-height: 320px;
+  }
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
