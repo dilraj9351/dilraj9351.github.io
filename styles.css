@@ -508,15 +508,15 @@ html { scroll-behavior: smooth; }
   display: block;
 }
 
-/* Title */
-.portfolio-card h4 {
-  margin: 1rem 1rem 1.4rem;
-  text-align: center;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--text-heading, #0f1724);
+.brand-title {
+  font-weight: 800;
+  font-size: 1.25rem;
+  /* remove gradient for dark-mode readability */
+  color: #05386B;
 }
 
+/* For dark mode */
+body.dark-mode .brand-title { color: #fff; }
 /* smaller phones */
 @media (max-width: 420px) {
   .portfolio-card img { height: 160px; }
@@ -714,9 +714,12 @@ body.lb-open { overflow: hidden; }
   box-shadow: var(--card-shadow);
   text-align: center;
 }
-.price-card h3 { margin: .25rem 0 .5rem; font-size: 1.1rem; }
-.price-card .price { font-weight: 700; font-size: 1.6rem; margin-bottom:.5rem; }
-.price-card p { color: var(--muted); margin-bottom: .75rem; }
+.price-card h3 {
+  font-size: 1.05rem;
+  color: #093a61; /* stronger */
+  margin-bottom: 6px;
+}
+.price { font-weight:700; font-size:1.2rem; }
 
 .hire-btn { width: 100%; }
 
@@ -966,4 +969,35 @@ body.dark-mode .site-nav { background:#071428; }
   margin-top: 10px; /* spacing under image */
   color: #66788a;
   font-size: 0.95rem;
+}
+#contact form {
+  display: grid;
+  gap: 12px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(6,25,50,0.08);
+  background: #f7fbff;
+  font-size: 0.95rem;
+  resize: vertical;
+}
+
+#contact textarea { min-height: 120px; }
+
+#contact .modal-actions,
+#contact .form-actions {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+#contact button[type="submit"] {
+  min-width: 140px;
 }
