@@ -771,3 +771,60 @@ body.lb-open { overflow: hidden; }
 .qr-panel img { width:220px; height:220px; object-fit:contain; margin:10px auto; border-radius:8px; }
 .qr-close { background:transparent; border:0; font-size:20px; float:right; cursor:pointer; color:#333; }
 .qr-note { font-size:13px; color:#666; margin-top:8px; }
+/* ---------- Portfolio responsive grid & image styles ---------- */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;                 /* spacing between cards */
+  align-items: start;
+  max-width: 1200px;        /* optional: limit overall width */
+  margin: 0 auto;           /* center the grid */
+  padding: 0 16px;          /* small side padding on mobile */
+}
+
+.portfolio-card {
+  background: transparent;  /* keep it same if you don't want card bg */
+  overflow: hidden;         /* prevent image overflow when we crop */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Make portfolio images scale and crop nicely */
+.portfolio-card img,
+.portfolio-link img,
+.portfolio-grid img {
+  width: 100%;              /* fill the column width */
+  height: 220px;           /* fixed visual height for cards */
+  object-fit: cover;        /* crop to fit nicely without distortion */
+  display: block;
+  border-radius: 8px;       /* rounded corners (optional) */
+}
+
+/* If you want the big hero-like image to remain large, target it separately */
+/* Example: #hero-img or img#hero-img { height: auto; width: 100%; object-fit: cover; } */
+
+/* Adjustments for very small screens */
+@media (max-width: 420px) {
+  .portfolio-card img,
+  .portfolio-link img,
+  .portfolio-grid img {
+    height: 180px;          /* smaller height on small phones */
+  }
+  .portfolio-grid {
+    gap: 14px;
+    grid-template-columns: 1fr;
+    padding: 0 12px;
+  }
+}
+
+/* Optional: title and desc under thumbnail */
+.portfolio-card h4 {
+  margin: 6px 0 0;
+  font-size: 1rem;
+}
+.portfolio-card .small-desc {
+  margin: 6px 0 0;
+  font-size: 0.85rem;
+  color: #666;
+}
