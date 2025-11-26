@@ -135,7 +135,14 @@ a:focus, button:focus, input:focus, textarea:focus{outline:3px solid rgba(11,99,
   .site-nav { padding-right: 70px; } 
   
 }
- 
+.site-nav { background: rgba(255,255,255,0.85); backdrop-filter: blur(6px); }
+.site-nav .nav-link { color: var(--text); text-decoration: none; padding: 8px 12px; border-radius: 8px;}
+.site-nav .nav-link:focus, .site-nav .nav-link:hover { background: rgba(0,0,0,0.04); }
+
+/* active link (make it visible) */
+.site-nav .nav-link.active { color: white; background: var(--brand); box-shadow: 0 6px 14px rgba(59,130,246,0.2); }
+:root.dark-mode .site-nav { background: rgba(10,20,30,0.9); }
+:root.dark-mode .site-nav .nav-link { color: var(--text); } 
   
 /* brand title */
 .brand {
