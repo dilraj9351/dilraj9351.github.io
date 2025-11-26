@@ -181,10 +181,9 @@ a:focus, button:focus, input:focus, textarea:focus{outline:3px solid rgba(11,99,
 :root.dark-mode .site-nav .nav-link { color: var(--text); } 
   
 /* brand title */
-.brand {
-  font-weight: 800;
-  font-size: 20px;
-  color: #05386B;
+.brand { font-weight:800; font-size:20px; color:var(--brand); background: transparent; padding:6px 10px; border-radius:8px;}
+:root.dark-mode .brand { color: #e6eef9; }
+.site-nav .brand { margin-left: 12px; }
 }
 
 /* nav links */
@@ -288,9 +287,7 @@ html { scroll-behavior: smooth; }
 @media(min-width:760px){
   .portfolio-grid{ grid-template-columns:repeat(2,1fr); }
 }
-@media(min-width:1100px){
-  .portfolio-grid{ grid-template-columns:repeat(3,1fr); }
-}
+
 
 /* card */
 .work-card{
@@ -1118,25 +1115,10 @@ body.dark-mode .site-nav { background:#071428; }
     font-weight: 600;
     cursor: pointer;
 }
-/* CHAT BUTTON (fixed bottom-right) */
-.chat-btn{
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 99999;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: linear-gradient(90deg,#00C853,#00E676); /* green gradient */
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  transform: translateZ(0);
-}
 
+.chat-btn .chat-icon svg { display:block; }
+.chat-btn { border-radius:999px; padding:10px 14px; }
+}
 /* small white chat bubble icon circle */
 .chat-btn .chat-icon{
   display:inline-flex;
@@ -1176,24 +1158,7 @@ body.dark-mode .site-nav { background:#071428; }
 
 /* optional: add hover */
 .chat-btn:hover{ transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.18); }
-/* ===== Floating chat button (keep only one .chat-btn in HTML) ===== */
-.chat-btn{
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 99999;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: linear-gradient(90deg,#00C853,#00E676); /* green gradient */
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  transform: translateZ(0);
-}
+
 
 /* chat icon circle */
 .chat-btn .chat-icon{
