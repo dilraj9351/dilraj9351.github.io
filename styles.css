@@ -120,7 +120,9 @@ body{background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothi
   border:none;
   box-shadow:0 10px 20px rgba(37,99,235,0.14);
 }
-
+@media (max-width:600px){
+  .contact-section .container { padding-left:18px; padding-right:18px; }
+}
 /* Footer */
 .footer{padding:30px 0;color:var(--muted);text-align:center}
 
