@@ -1,359 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dilraj — Web Developer</title>
 
-  <title>Dilraj – Web Developer | Affordable Modern Websites</title>
-  <meta name="description" content="I build modern, fast and mobile-friendly websites for businesses. High-quality landing pages, bug fixing, and custom web solutions." />
-  <meta name="keywords" content="Dilraj, web developer, website developer, portfolio, landing page, freelancer" />
-  <meta name="author" content="Dilraj" />
+  <meta name="description" content="Dilraj — Freelance Web Developer. I build fast, responsive and modern websites.">
+  <link rel="canonical" href="https://dilraj9351.github.io/">
 
-  <!-- Robots -->
-  <meta name="robots" content="index, follow" />
-  <meta name="googlebot" content="index, follow" />
-  <meta name="bingbot" content="index, follow" />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dilraj — Web Developer">
+  <meta property="og:description" content="I build modern, responsive websites and landing pages.">
+  <meta property="og:image" content="og-image.png">
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://dilraj9351.github.io/" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="og-image.png">
 
-  <!-- Open Graph (Facebook / WhatsApp previews) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Dilraj – Web Developer" />
-  <meta property="og:description" content="Modern, fast and affordable website solutions." />
-  <meta property="og:url" content="https://dilraj9351.github.io/" />
-  <meta property="og:image" content="https://raw.githubusercontent.com/dilraj9351/dilraj9351.github.io/main/og-image.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Dilraj – Web Developer" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dilraj – Web Developer" />
-  <meta name="twitter:description" content="Modern, fast and affordable website solutions." />
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/dilraj9351/dilraj9351.github.io/main/og-image.png" />
-  <meta name="twitter:url" content="https://dilraj9351.github.io /">
-  <!-- Google site verification (keep the token you already used) -->
-  <meta name="google-site-verification" content="-VzSD-PdBHE6jX20Op4yHCWW3ALJ11b5rNM5MZEvPEM" />
-
-  <!-- Favicon + stylesheet -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="styles.css?v=2" />
-  <link rel="preload" href="/styles.css" as="style" />
-  <link rel="preload" href="/script.js" as="script" />
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Dilraj",
-  "jobTitle": "Web Developer",
-  "url": "https://dilraj9351.github.io/",
-  "image": "https://dilraj9351.github.io/og-image.png",
-  "description": "Freelance Web Developer building modern, fast and responsive websites.",
-  "sameAs": [
-    "https://github.com/dilraj9351"
-  ]
-}
-  </script>
-  
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <!-- NAVBAR -->
-<nav class="site-nav">
-  <div class="container nav-inner">
-    <a class="brand" href="#home">Dilraj</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">Dilraj</a>
 
-    <!-- hamburger for mobile -->
-    <button id="navToggle" class="nav-toggle" aria-label="Toggle menu">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-    </button>
+      <nav class="nav">
+        <a class="nav-link active" href="#services">Services</a>
+        <a class="nav-link" href="#portfolio">Portfolio</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
 
-    <div class="nav-links" id="navLinks">
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#portfolio" class="nav-link">Portfolio</a>
-      <a href="#contact" class="nav-link">Contact</a>
-      <button id="darkToggle" class="btn small">Dark</button>
-    </div>
-  </div>
-</nav>
+      <button id="themeToggle" class="btn small" aria-pressed="false">Dark</button>
 
-      <!-- Dark mode toggle -->
-      <button id="themeToggle" class="btn theme-toggle" aria-pressed="false" type="button">Dark</button>
+      <button id="mobileMenuBtn" class="hamburger" aria-expanded="false">
+        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+      </button>
     </div>
   </header>
 
-  <!-- HERO -->
-  <main>
-    <section class="hero reveal">
-      <div class="container hero-inner">
-        <div class="hero-left">
-          <h1 class="hero-title">Hi, I'm Dilraj — Web Developer</h1>
-<p class="lead">I build fast, responsive and clean websites for businesses and individuals.</p>
-          <a href="#contact" class="btn primary">Get Started</a>
-        </div>
+  <main class="container">
+    <section class="hero" id="home">
+      <div>
+        <h1>Hi, I'm Dilraj — Web Developer</h1>
+        <p class="lead">I build fast, responsive and clean websites for businesses and individuals.</p>
+        <a class="btn cta" href="#contact">Get Started</a>
 
-        <div class="hero-right">
-  <picture>
-    <source srcset="hero.webp" type="image/webp" media="(min-width: 720px)">
-    <source srcset="hero.png" type="image/png" media="(min-width: 720px)">
-    <img id="hero-img"
-         src="hero.webp"
-         alt="Modern desk workspace with laptop – web developer sample"
-         loading="lazy"
-         width="1200" height="700"
-         style="max-width:100%;height:auto;">
-  </picture>
+        <div id="services" style="margin-top:26px">
+          <h3>Services</h3>
+          <div class="cards">
+            <div class="card"><h4>Landing Pages</h4><p>High converting, responsive landing pages.</p></div>
+            <div class="card"><h4>Bug Fixing</h4><p>Layout, UI & performance fixes.</p></div>
+            <div class="card"><h4>Custom Websites</h4><p>Full custom builds for businesses & startups.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-img">
+        <img src="hero.png" alt="Hero Image">
+      </div>
+    </section>
+
+    <section class="pricing">
+      <h3>Plans</h3>
+      <div class="plans">
+        <div class="plan">
+          <strong>Starter</strong>
+          <p>$49 — 1 page, contact form, responsive.</p>
+        </div>
+        <div class="plan">
+          <strong>Business</strong>
+          <p>$99 — 3 pages, SEO basics.</p>
+        </div>
+        <div class="plan">
+          <strong>Premium</strong>
+          <p>$149 — Custom features, booking, CMS.</p>
         </div>
       </div>
     </section>
-      <section class="intro-seo" style="padding: 20px 0;">
-  <div class="container">
-    <p style="font-size: 1rem; opacity: 0.9;">
-      I am Dilraj, a freelance web developer creating modern, responsive and 
-      high-performance websites for businesses, startups and personal brands. 
-      I build landing pages, portfolio sites, custom websites and more using 
-      clean UI and optimized code.
-    </p>
-  </div>
-      </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="section container reveal">
-      <h2>Services</h2>
-      <div class="cards">
-        <article class="card">
-          <div class="icon">🖥️</div>
-          <h3>Landing Pages</h3>
-<p>High-converting, mobile-friendly landing pages built quickly.</p>
-        </article>
+    <section id="portfolio" class="portfolio">
+      <h2>Portfolio</h2>
+      <div class="portfolio-grid">
+        <figure>
+          <img src="portfolio1.png" alt="Project 1">
+          <figcaption>Project One</figcaption>
+        </figure>
 
-        <article class="card">
-          <div class="icon">🔧</div>
-          <h3>Bug Fixing</h3>
-<p>I fix layout issues, broken designs, slow loading and UI problems.</p>
-        </article>
+        <figure>
+          <img src="portfolio2.png" alt="Project 2">
+          <figcaption>Project Two</figcaption>
+        </figure>
 
-        <article class="card">
-          <div class="icon">💼</div>
-          <h3>Custom Websites</h3>
-<p>Clean and modern websites for portfolios, startups & personal brands.</p>
-        </article>
+        <figure>
+          <img src="portfolio3.png" alt="Project 3">
+          <figcaption>Project Three</figcaption>
+        </figure>
       </div>
     </section>
-      <!-- PORTFOLIO -->
-<section id="portfolio" class="section container">
-  <h2>Portfolio</h2>
-  <p class="lead">Here are some sample projects I can build.</p>
 
-  <div class="portfolio-grid">
-    <!-- Portfolio item 1 -->
-<a href="business-demo/" target="_blank" class="portfolio-link" aria-label="View Modern Business demo">
-  <img src="portfolio1.png" alt="Modern Business Landing Page" loading="lazy" />
-  <h4>Modern Business Landing Page</h4>
-  <p class="small-desc">A clean and responsive business website demo built by Dilraj.</p>
-</a>
+    <section id="contact" class="contact">
+      <h2>Contact Me</h2>
+      <p>Have a project in mind? Let's talk.</p>
 
-<!-- Portfolio item 2 -->
-<a href="Gym-demo/" target="_blank" class="portfolio-link" aria-label="View Premium gym demo">
-  <img src="portfolio2.png" alt="Premium Gym Website" loading="lazy" />
-  <h4>Premium Gym Website</h4>
-  <p class="small-desc">Fast and modern fitness website demo created with smooth UI.</p>
-</a>
+      <form id="contactForm" action="https://formsubmit.co/dilrajmeena2880@gmail.com" method="POST">
+        <input type="hidden" name="_next" value="https://dilraj9351.github.io/thanks.html">
+        <input type="hidden" name="_captcha" value="false">
 
-<!-- Portfolio item 3 -->
-<a href="restaurant-demo/" target="_blank" class="portfolio-link" aria-label="View Restaurant demo">
-  <img src="portfolio3.png" alt="Restaurant Website (Menu + Booking)" loading="lazy" />
-  <h4>Restaurant Website (Menu + Booking)</h4>
-  <p class="small-desc">Professional restaurant website demo with menu & booking features.</p>
-</a>
-  </div>
-</section>
-
-<!-- Lightbox modal (with prev/next) -->
-<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
-  <button id="lbPrev" class="lb-nav lb-prev" aria-label="Previous image">◀</button>
-  <div class="lb-inner" role="document">
-    <button id="lbClose" class="lb-close" aria-label="Close">✕</button>
-    <img id="lbImg" src="" alt="" />
-    <p id="lbCaption"></p>
-  </div>
-  <button id="lbNext" class="lb-nav lb-next" aria-label="Next image">▶</button>
-</div>
-     <!-- HIRE / CTA SECTION -->
-<section id="hire" class="section container">
-  <h2>Want a Website? Let's Build It.</h2>
-  <p class="lead">Affordable, modern websites for businesses. Choose a plan that fits you.</p>
-
-  <div class="pricing-grid">
-
-    <!-- Starter -->
-    <article class="price-card">
-      <h3>Starter</h3>
-      <p class="price">$49</p>
-      <p>Landing page, responsive, SEO basics, 1 revision.</p>
-      <button class="btn primary hire-btn" data-plan="Starter">Hire Starter</button>
-    </article>
-
-    <!-- Business -->
-    <article class="price-card">
-      <h3>Business</h3>
-      <p class="price">$99</p>
-      <p>3 pages, contact form, portfolio, 2 revisions.</p>
-      <button class="btn primary hire-btn" data-plan="Business">Hire Business</button>
-    </article>
-
-    <!-- Premium -->
-    <article class="price-card">
-      <h3>Premium</h3>
-      <p class="price">$149</p>
-      <p>Custom features, booking/login (if needed), 4 revisions.</p>
-      <button class="btn primary hire-btn" data-plan="Premium">Hire Premium</button>
-    </article>
-
-  </div>
-</section>
-      
-
-<!-- HIRE MODAL -->
-<div id="hireModal" class="modal" aria-hidden="true">
-  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="hireTitle">
-    <button class="modal-close" id="closeHire">×</button>
-    <h3 id="hireTitle">Get started — request a demo</h3>
-    <p id="selectedPlanText">Selected plan: <strong id="selectedPlan">Starter</strong></p>
- <p>Click below to contact me on WhatsApp.</p>
-
-<a id="whatsappBtn" class="btn primary" target="_blank">Contact on WhatsApp</a>
-      <div id="upiButtons">
-          <!-- payment area (add inside hireModal, under selectedPlanText) -->
-<div id="paymentArea" class="payment-area">
-  <p class="lead">Pay via UPI</p>
-
-  <div class="upi-row">
-    <button id="copyUpiBtn" class="btn upi-btn">Copy UPI ID</button>
-    <button id="showQrBtn" class="btn upi-qr-btn" aria-expanded="false">Show QR</button>
-  </div>
-
-  <p class="upi-id" id="upiText">9351996276@ibl</p>
-
-  <!-- QR modal (simple) -->
-  <div id="qrModal" class="qr-modal" aria-hidden="true">
-    <div class="qr-panel">
-      <button id="qrClose" class="qr-close" aria-label="Close">✕</button>
-      <h3>Scan to pay (UPI)</h3>
-      <img id="qrImage" alt="UPI QR" src="" />
-      <p class="qr-note">Open your UPI app → Scan QR → Pay</p>
-      <button id="copyUpiBtn2" class="btn upi-btn">Copy UPI ID</button>
-    </div>
-  </div>
-</div>
-    <a id="upiStarter" href="upi://pay?pa=9351996276@ibl&pn=Dilraj&am=49&cu=USD" 
-       class="btn primary" target="_blank" style="display:none;margin-top:10px;">
-       Pay $49 (Starter)
-    </a>
-
-    <a id="upiBusiness" href="upi://pay?pa=9351996276@ibl&pn=Dilraj&am=99&cu=USD" 
-       class="btn primary" target="_blank" style="display:none;margin-top:10px;">
-       Pay $99 (Business)
-    </a>
-
-    <a id="upiPremium" href="upi://pay?pa=9351996276@ibl&pn=Dilraj&am=149&cu=USD" 
-       class="btn primary" target="_blank" style="display:none;margin-top:10px;">
-       Pay $149 (Premium)
-    </a>
-        *Prices are listed in USD for international clients.*
-      </div>
-    <!-- change action to your Formspree / endpoint -->
-    <form id="hireForm" action="https://formspree.io/f/yourformid" method="POST" class="form">
-      <input type="hidden" name="plan" id="formPlan" value="Starter" />
-      <label class="sr-only">Name<input type="text" name="name" placeholder="Your name" required /></label>
-      <label class="sr-only">Email<input type="email" name="email" placeholder="Email" required /></label>
-      <label class="sr-only">Phone<input type="text" name="phone" placeholder="Phone (optional)"/></label>
-      <label class="sr-only">Details<textarea name="message" placeholder="Short brief (what you need)"></textarea></label>
-
-      <div class="modal-actions">
-        <button type="submit" class="btn primary">Send request</button>
-        <button type="button" class="btn" id="cancelHire">Cancel</button>
-      </div>
-    </form>
-  </div>
-</div> 
-      <section class="seo-keywords" style="padding: 20px 0;">
-  <div class="container">
-    <h2 style="font-size: 1.4rem; margin-bottom: 10px;">Web Development Services</h2>
-    <p style="opacity: 0.9;">
-      I create modern websites including landing pages, business websites, 
-      portfolio websites, restaurant websites, gym websites, booking websites 
-      and custom-designed pages. My focus is high speed, mobile optimization, 
-      clean UI, smooth animations and SEO-friendly structure.
-    </p>
-  </div>
-      </section>
-      
-
-    <!-- CONTACT -->
-    <section id="contact" class="section container contact-section">
-    <h2>Contact Me</h2>
-    <p class="lead">Have a project in mind? Let’s talk.</p>
-
-    <form id="contact-form" class="contact-form">
-        <div class="form-group">
+        <div class="form-row">
+          <div>
             <label>Name</label>
-            <input type="text" placeholder="Your Name" required>
-        </div>
-
-        <div class="form-group">
+            <input name="name" type="text" required>
+          </div>
+          <div>
             <label>Email</label>
-            <input type="email" placeholder="Your Email" required>
+            <input name="email" type="email" required>
+          </div>
         </div>
 
-        <div class="form-group">
-            <label>Message</label>
-            <textarea placeholder="Your Message" rows="4" required></textarea>
+        <div class="form-row full">
+          <label>Message</label>
+          <textarea name="message" required></textarea>
         </div>
 
-        <button class="btn primary submit-btn">Send Message</button>
-    </form>
+        <button class="btn primary" type="submit">Send Message</button>
+      </form>
     </section>
-       <!-- CONTACT: Success Modal + Toast -->
-<div id="successModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="successTitle">
-  <div class="modal-panel" role="document">
-    <button class="modal-close" id="closeSuccess" aria-label="Close">✕</button>
-    <h3 id="successTitle">Message sent ✅</h3>
-    <p>Thanks! I’ll get back to you soon.</p>
-    <button id="successOk" class="btn primary">Close</button>
-  </div>
-</div>
 
-<!-- small toast (bottom center) -->
-<div id="successToast" class="toast" aria-hidden="true">Message sent — thanks!</div> 
-
-      <!-- status toast -->
-      <div id="formStatus" class="toast" role="status" aria-live="polite" hidden></div>
-    </section>
+    <footer class="footer">
+      <p>© 2025 Dilraj — All rights reserved.</p>
+    </footer>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 Dilraj — All rights reserved.</p>
-    </div>
-  </footer>
+  <a class="whatsapp-fab" href="https://wa.me/919351996276" target="_blank">
+    <svg viewBox="0 0 24 24" width="22" height="22">
+      <path fill="#fff" d="M20.5 3.5A11.9 11.9 0 0 0 12 .5 11.5 11.5 0 0 0 .5 12c0 2 .5 3.9 1.5 5.6L.5 23.5l6-1.6A11.6 11.6 0 0 0 12 23.5 11.5 11.5 0 0 0 20.5 3.5z"/>
+      <path fill="#19c37d" d="M17.7 14.4c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.1l-1 1.2c-.2.2-.4.3-.7.2-1.3-.6-2.4-1.5-3.3-2.7-.2-.3-.2-.6 0-.8l.5-.6c.2-.3.3-.5.2-.8l-1-2.4c-.2-.5-.4-.5-.7-.5H7c-.3 0-.7.1-1 .4-.3.3-1 1-1 2.6 0 1.6 1.1 3.1 1.3 3.3.2.3 2.2 3.5 5.3 4.8 2 .9 2.9 1 4 .8.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.5s-.3-.2-.6-.4z"/>
+    </svg>
+    Let's talk
+  </a>
 
-  
-
-  <!-- Link to JS -->
   <script src="script.js" defer></script>
-    <a href="https://dilraj9351.github.io/" style="display:none">Dilraj Web Developer</a>
 </body>
 </html>
-
-<a href="https://wa.me/9199351996276" class="chat-btn" aria-label="WhatsApp" target="_blank" rel="noopener">
-  <span class="chat-icon" aria-hidden="true">
-    <svg width="20" height="20" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false">
-      <path fill="#ffffff" d="M16.004 3C9.38 3 4 8.38 4 15.01c0 2.66.87 5.12 2.36 7.12L4.1 28l5.05-2.08A11.97 11.97 0 0016.004 27c6.627 0 12-5.373 12-11.99C28.004 8.38 22.63 3 16.004 3zm0 21.33c-1.2 0-2.37-.27-3.44-.8l-.25-.13-3.0 1.24 1.27-2.95-.14-.28a8.24 8.24 0 01-1.32-4.6c0-4.66 3.78-8.43 8.43-8.43 4.65 0 8.43 3.77 8.43 8.43s-3.78 8.42-8.43 8.42z"/>
-      <path fill="#ffffff" d="M22.2 19.15c-.36-.18-2.13-1.04-2.46-1.16-.33-.12-.57-.18-.81.18-.24.36-.93 1.16-1.14 1.4-.21.24-.43.27-.8.09-.36-.18-1.53-.57-2.92-1.8-1.08-.96-1.8-2.14-2.01-2.5-.21-.36-.02-.55.16-.73.16-.16.36-.43.54-.65.18-.22.24-.36.36-.6.12-.24.06-.45-.03-.62-.09-.18-.81-2.0-1.12-2.72-.29-.72-.58-.62-.81-.63h-.7c-.18 0-.46.07-.7.34-.24.27-.93.9-.93 2.2 0 1.3.95 2.56 1.08 2.74.12.18 1.88 2.9 4.56 4.15 3.18 1.5 3.18 1.0 3.75 1.03.57.03 1.87-.76 2.14-1.5.27-.74.27-1.37.2-1.5-.06-.12-.21-.18-.57-.36z"/>
-    </svg>
-  </span>
-  <span class="chat-label">Let's talk</span>
-</a>
