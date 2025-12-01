@@ -1,34 +1,78 @@
-:root{--bg:#fff;--muted:#6b7280;--accent:#1762ff}
-*{box-sizing:border-box}body{font-family:Inter,system-ui,Segoe UI,Arial;background:#f7f8fb;color:#0f1724;margin:0;line-height:1.45}
-.wrap{max-width:1100px;margin:0 auto;padding:0 18px}
-.site-header{background:transparent;padding:18px 0}
-.logo{font-weight:700;color:var(--accent);text-decoration:none}
-.top-nav a{margin-left:14px;color:var(--muted);text-decoration:none}
-.hero{padding:48px 0;background:linear-gradient(180deg,#ffffff, #f1f6ff)}
-.hero-inner{display:flex;gap:28px;align-items:center}
-.hero-text h1{font-size:28px;margin:0 0 10px}
-.hero-text p{color:var(--muted);margin:0 0 18px}
-.cta-row .btn{margin-right:12px}
-.hero-media img{width:420px;max-width:40vw;border-radius:12px;box-shadow:0 18px 48px rgba(12,20,60,0.08)}
+:root{
+  --bg:#fbfcff;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#0b74ff;
+  --accent-2:#0a5ed0;
+  --ghost:#f5f7fb;
+  --shadow:0 10px 30px rgba(12,20,40,0.06);
+  --radius:12px;
+}
 
-.section{padding:36px 0}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 12px 36px rgba(12,20,60,0.06)}
-.thumbs img{width:32%;border-radius:8px;margin-right:2%}
-.contact-row{display:flex;gap:18px;align-items:flex-start}
-.contact-form{display:flex;flex-direction:column;gap:10px;max-width:420px}
-input,textarea{padding:10px;border-radius:8px;border:1px solid #e6e9ef}
-.btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;background:#f3f4f6;color:#111;border:0}
-.btn.primary{background:var(--accent);color:#fff}
-.btn.ghost{background:transparent;border:1px solid #e6e9ef}
-.btn.whatsapp{background:#25D366;color:#fff}
-.site-footer{padding:18px 0;text-align:center;color:var(--muted);font-size:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:#0f1724;line-height:1.45}
+
+.bb-container{max-width:1100px;margin:0 auto;padding:28px}
+
+.bb-header{position:sticky;top:12px;z-index:999}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(255,255,255,0.9);padding:12px;border-radius:12px;box-shadow:var(--shadow)}
+.bb-brand{font-weight:800;color:var(--accent);text-decoration:none;font-size:20px;padding:6px 10px;border-radius:8px}
+.bb-nav{display:flex;gap:12px;align-items:center}
+.bb-link{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:700}
+.bb-link:hover{color:var(--accent)}
+.btn-outline{padding:8px 12px;border-radius:10px;border:1px solid rgba(11,120,255,0.08);text-decoration:none;color:var(--accent);font-weight:800}
+
+.bb-hamburger{display:none;background:none;border:0;width:44px;height:44px;border-radius:8px}
+
+/* hero */
+.bb-hero{padding:48px 0}
+.hero-inner{display:grid;grid-template-columns:1fr 480px;gap:28px;align-items:center}
+.hero-copy h1{font-size:34px;margin-bottom:12px}
+.lead{color:var(--muted);margin-bottom:18px}
+.hero-actions{margin-top:12px}
+.btn-primary{display:inline-block;padding:12px 18px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;text-decoration:none;font-weight:800;margin-right:10px}
+.btn-ghost{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--ghost);color:var(--muted);text-decoration:none;font-weight:700}
+
+/* benefits */
+.benefits{list-style:none;margin-top:18px;display:flex;gap:12px;color:var(--muted)}
+.benefits li{background:linear-gradient(180deg,#fff,#fbfdff);padding:8px 12px;border-radius:8px;box-shadow:var(--shadow)}
+
+/* services */
+.bb-section{padding:40px 0}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.service{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+
+/* work */
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.work-grid img{width:100%;border-radius:10px;box-shadow:var(--shadow)}
+
+/* contact form */
+.contact-section{padding-bottom:56px}
+.contact-form{background:var(--card);padding:20px;border-radius:12px;box-shadow:var(--shadow)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-grid .full{grid-column:1/-1}
+label{display:block;font-weight:700;margin-bottom:6px}
+input, textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #e6eef8;background:#fff;font-size:15px}
+textarea{min-height:120px}
+.form-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}
+.contact-meta a{color:var(--muted);text-decoration:none;margin-left:12px}
+
+/* footer */
+.bb-footer{padding:20px 0;color:var(--muted);border-top:1px solid rgba(0,0,0,0.04)}
+.footer-row{display:flex;justify-content:space-between;align-items:center}
+
+/* whatsapp */
+.bb-whatsapp{position:fixed;right:18px;bottom:18px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:10px 14px;border-radius:999px;display:flex;align-items:center;gap:10px;text-decoration:none;box-shadow:0 12px 30px rgba(11,120,255,0.14);z-index:9999}
+.bb-whatsapp svg{width:18px;height:18px;display:block}
 
 /* responsive */
-@media(max-width:880px){
- .hero-inner{flex-direction:column}
- .grid-3{grid-template-columns:1fr}
- .thumbs img{width:100%;margin-bottom:10px}
- .hero-media img{max-width:85%}
- .contact-row{flex-direction:column}
+@media(max-width:980px){
+  .bb-nav{display:none}
+  .bb-hamburger{display:block}
+  .hero-inner{grid-template-columns:1fr;gap:18px}
+  .services-grid{grid-template-columns:1fr}
+  .work-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .footer-row{flex-direction:column;align-items:flex-start;gap:8px}
 }
