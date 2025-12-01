@@ -3,56 +3,208 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Restaurant Demo — Menu & Booking</title>
-  <meta name="description" content="Restaurant demo with menu, booking and WhatsApp orders." />
-  <link rel="stylesheet" href="styles.css" />
+  <title>Saffron & Co — Restaurant</title>
+  <meta name="description" content="Saffron & Co — Modern Indian restaurant. Fresh ingredients, great flavors. Book a table or order online." />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Saffron & Co — Restaurant">
+  <meta property="og:description" content="Modern Indian restaurant serving hand-crafted dishes. Book a table today.">
+  <meta property="og:image" content="restaurant-og.png">
+  <link rel="stylesheet" href="restaurant-styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <a class="logo" href="/">Restaurant Demo</a>
-      <nav class="nav"> <a href="#menu">Menu</a> <a href="#booking">Booking</a> </nav>
+  <header class="rest-header">
+    <div class="rest-container header-inner">
+      <a class="rest-brand" href="/">Saffron & Co</a>
+      <nav class="rest-nav" aria-label="Main navigation">
+        <a class="rest-link" href="#home">Home</a>
+        <a class="rest-link" href="#menu">Menu</a>
+        <a class="rest-link" href="#about">About</a>
+        <a class="rest-link" href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn-reserve" href="#contact">Reserve</a>
+      </div>
+      <button id="restMobileBtn" class="rest-hamburger" aria-expanded="false" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
   <main>
-    <section class="hero rest-hero">
-      <div class="wrap hero-inner">
-        <div class="hero-text">
-          <h1>Delicious food, beautiful online presence</h1>
-          <p>Menu, booking and WhatsApp ordering — perfect for restaurants & cafes.</p>
-          <div class="cta-row">
-            <a class="btn primary" href="https://wa.me/919351996276?text=Hi,%20I%20want%20a%20restaurant%20website" target="_blank">Order a website ₹1999</a>
-            <a class="btn ghost" href="#menu">View menu</a>
+    <section id="home" class="rest-hero">
+      <div class="rest-container hero-inner">
+        <div class="hero-copy">
+          <h1>Bold flavours. Warm hospitality.</h1>
+          <p class="lead">Saffron & Co blends traditional recipes with modern techniques. Fresh ingredients, crafted daily.</p>
+          <div class="hero-ctas">
+            <a class="btn-primary" href="#menu">View Menu</a>
+            <a class="btn-outline" href="#contact">Reserve Table</a>
+          </div>
+          <div class="hours">
+            <div><strong>Open:</strong> Tue–Sun</div>
+            <div><strong>Hours:</strong> 11:30 AM – 10:30 PM</div>
           </div>
         </div>
         <div class="hero-media">
-          <img src="https://raw.githubusercontent.com/dilraj9351/dilraj9351.github.io/main/portfolio3.png" alt="Restaurant demo" />
+          <img src="restaurant-hero.jpg" alt="Chef plating a dish">
         </div>
       </div>
     </section>
 
-    <section id="menu" class="section">
-      <div class="wrap grid-3">
-        <div class="menu-card"><h4>Pizza</h4><p>Tasty stone-baked pizza.</p></div>
-        <div class="menu-card"><h4>Pasta</h4><p>Creamy & fresh pasta.</p></div>
-        <div class="menu-card"><h4>Burgers</h4><p>Premium beef & veg burgers.</p></div>
+    <section id="menu" class="rest-section">
+      <div class="rest-container">
+        <h2>Our Menu</h2>
+        <div class="menu-grid">
+          <article class="menu-item">
+            <img src="menu1.jpg" alt="Dish 1">
+            <div class="item-info">
+              <h3>Saffron Chicken</h3>
+              <p class="muted">Spiced, slow-cooked chicken with saffron jus.</p>
+              <div class="price">₹399</div>
+            </div>
+          </article>
+          <article class="menu-item">
+            <img src="menu2.jpg" alt="Dish 2">
+            <div class="item-info">
+              <h3>Paneer Tikka</h3>
+              <p class="muted">Charred paneer with house masala.</p>
+              <div class="price">₹299</div>
+            </div>
+          </article>
+          <article class="menu-item">
+            <img src="menu3.jpg" alt="Dish 3">
+            <div class="item-info">
+              <h3>Garlic Naan</h3>
+              <p class="muted">Stone-baked naan with garlic butter.</p>
+              <div class="price">₹99</div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="booking" class="section contact">
-      <div class="wrap">
-        <h2>Booking & Orders</h2>
-        <p>Customers can call or message on WhatsApp to order or book a table.</p>
-        <a class="btn whatsapp" href="https://wa.me/919351996276?text=Hi,%20I%20want%20to%20book%20a%20table" target="_blank">WhatsApp Order</a>
+    <section id="about" class="rest-section rest-about">
+      <div class="rest-container">
+        <h2>About Us</h2>
+        <p class="muted">Saffron & Co started with a simple idea — honest ingredients, respectful cooking and friendly service. Located in the heart of the city, we welcome families, friends and food lovers.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="rest-section rest-contact">
+      <div class="rest-container">
+        <h2>Book a Table / Contact</h2>
+        <p class="muted">Call or fill the form and we will confirm your reservation.</p>
+
+        <form id="restForm" class="rest-form" action="https://formsubmit.co/dilrajmeena2880@gmail.com" method="POST">
+          <input type="hidden" name="_next" value="https://dilraj9351.github.io/thanks.html">
+          <div class="form-grid">
+            <label>
+              Name
+              <input name="name" type="text" required>
+            </label>
+            <label>
+              Phone
+              <input name="phone" type="tel" placeholder="+91..." required>
+            </label>
+            <label class="full">
+              Date & Time
+              <input name="datetime" type="datetime-local" required>
+            </label>
+            <label class="full">
+              Guests
+              <select name="guests">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5+</option>
+              </select>
+            </label>
+            <label class="full">
+              Message / Requests
+              <textarea name="message" rows="4"></textarea>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn-primary" type="submit">Request Reservation</button>
+            <div class="contact-info">
+              <a href="tel:+919351996276">+91 9351996276</a>
+              <a href="mailto:dilrajmeena2880@gmail.com">dilrajmeena2880@gmail.com</a>
+            </div>
+          </div>
+        </form>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">© <span id="year"></span> Restaurant Demo — by Dilraj</div>
+  <footer class="rest-footer">
+    <div class="rest-container">
+      <div class="footer-row">
+        <div>© 2025 Saffron & Co</div>
+        <div class="social">
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Facebook">Facebook</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <a class="rest-whatsapp" href="https://wa.me/919351996276" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#fff" d="M20.5 3.5A11.9 11.9 0 0 0 12 .5 11.5 11.5 0 0 0 .5 12c0 2 .5 3.9 1.5 5.6L.5 23.5l6-1.6A11.6 11.6 0 0 0 12 23.5 11.5 11.5 0 0 0 20.5 3.5z"/><path fill="#19c37d" d="M17.7 14.4c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.1l-1 1.2c-.2.2-.4.3-.7.2-1.3-.6-2.4-1.5-3.3-2.7-.2-.3-.2-.6 0-.8l.5-.6c.2-.3.3-.5.2-.8l-1-2.4c-.2-.5-.4-.5-.7-.5H7c-.3 0-.7.1-1 .4-.3.3-1 1-1 2.6 0 1.6 1.1 3.1 1.3 3.3.2.3 2.2 3.5 5.3 4.8 2 .9 2.9 1 4 .8.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.5s-.3-.2-.6-.4z"/></svg>
+    Reserve
+  </a>
+
+  <script>
+    (function(){
+      const mobileBtn = document.getElementById('restMobileBtn');
+      const nav = document.querySelector('.rest-nav');
+      if(mobileBtn){
+        mobileBtn.addEventListener('click', function(){
+          const open = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', String(!open));
+          if(!open){
+            nav.style.display = 'flex';
+            nav.style.flexDirection = 'column';
+            nav.style.position = 'absolute';
+            nav.style.right = '18px';
+            nav.style.top = '72px';
+            nav.style.background = '#fff';
+            nav.style.padding = '12px';
+            nav.style.borderRadius = '10px';
+            nav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
+          } else {
+            nav.style.display = '';
+            nav.style.position = '';
+            nav.style.right = '';
+            nav.style.top = '';
+            nav.style.background = '';
+            nav.style.padding = '';
+            nav.style.borderRadius = '';
+            nav.style.boxShadow = '';
+          }
+        });
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', function(e){
+          const href = this.getAttribute('href');
+          if(!href || href === '#') return;
+          const el = document.querySelector(href);
+          if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+        });
+      });
+
+      const form = document.getElementById('restForm');
+      if(form){
+        form.addEventListener('submit', function(e){
+          const btn = this.querySelector('button[type="submit"]');
+          btn.disabled = true;
+          btn.textContent = 'Requesting...';
+          setTimeout(()=>{ btn.disabled = false; btn.textContent = 'Request Reservation'; }, 1500);
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
