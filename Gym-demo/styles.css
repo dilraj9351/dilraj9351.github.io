@@ -1,26 +1,91 @@
-:root{--accent:#ff4d6d;--muted:#6b7280}
-*{box-sizing:border-box}body{font-family:Inter,system-ui,Arial;background:#0b1020;color:#f8fafc;margin:0}
-.wrap{max-width:1100px;margin:0 auto;padding:0 18px}
-.site-header{padding:16px 0}
-.logo{color:#fff;text-decoration:none;font-weight:700}
-.hero{padding:48px 0}
-.gym-hero{background:linear-gradient(135deg,#07132a,#0b1b38)}
-.hero-inner{display:flex;gap:20px;align-items:center}
-.hero-text h1{color:#fff;margin:0 0 8px}
-.hero-text p{color:#cbd5e1;margin:0 0 14px}
-.hero-media img{width:380px;border-radius:12px;box-shadow:0 18px 48px rgba(2,6,23,0.5)}
-.btn{padding:10px 14px;border-radius:10px;text-decoration:none}
-.btn.primary{background:var(--accent);color:#fff}
-.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.08)}
-.btn.whatsapp{background:#25D366;color:#fff}
-.section{padding:32px 0}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.feature-card{background:#071226;padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.4);color:#fff}
-.site-footer{padding:18px 0;text-align:center;color:#93a3b8;font-size:14px}
+/* gym-styles.css */
+:root{
+  --bg:#fcfdff;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#d32f2f;
+  --accent-dark:#b71c1c;
+  --primary:#0b74ff;
+  --shadow:0 10px 30px rgba(12,20,40,0.06);
+  --radius:12px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:#0f1724;line-height:1.45}
+
+.gf-container{max-width:1100px;margin:0 auto;padding:24px}
+
+/* header */
+.gf-header{position:sticky;top:12px;z-index:999}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(255,255,255,0.92);padding:12px;border-radius:12px;box-shadow:var(--shadow)}
+.gf-brand{font-weight:800;color:var(--accent);text-decoration:none;font-size:20px;padding:6px 10px;border-radius:8px}
+.gf-nav{display:flex;gap:12px;align-items:center}
+.gf-link{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:700}
+.gf-link:hover{color:#000}
+.btn-cta{background:linear-gradient(90deg,var(--accent),var(--accent-dark));color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:800}
+
+/* mobile hamburger */
+.gf-hamburger{display:none;background:none;border:0;width:44px;height:44px;border-radius:8px}
+
+/* hero */
+.gf-hero{padding:48px 0}
+.hero-inner{display:grid;grid-template-columns:1fr 460px;gap:28px;align-items:center}
+.hero-copy h1{font-size:32px;margin-bottom:12px}
+.lead{color:var(--muted);margin-bottom:18px}
+.btn-primary{background:linear-gradient(90deg,var(--primary),#0780ff);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:800;margin-right:10px}
+.btn-outline{border:2px solid rgba(0,0,0,0.06);padding:10px 14px;border-radius:10px;text-decoration:none;color:var(--muted);font-weight:700}
+.hero-img{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center}
+.hero-img img{width:100%;border-radius:10px;display:block}
+
+/* features */
+.hero-features{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.feature{background:linear-gradient(180deg,#fff,#fafcff);padding:10px 12px;border-radius:10px;box-shadow:var(--shadow);min-width:140px}
+.feature strong{display:block}
+
+/* programs */
+.gf-section{padding:40px 0}
+.program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.program-card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+.program-card h3{margin-bottom:6px}
+.program-card .price{margin-top:12px;font-weight:800;color:var(--primary)}
+.program-card .btn-small{display:inline-block;margin-top:12px;padding:8px 12px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-dark));color:#fff;text-decoration:none;font-weight:800}
+
+/* trainers */
+.gf-muted{background:linear-gradient(180deg,#fbfbfd,#f6f7fb)}
+.trainers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.trainer img{width:100%;border-radius:10px;display:block}
+.trainer figcaption{padding:10px 0;color:var(--muted)}
+
+/* pricing */
+.pricing-grid{display:flex;gap:16px;flex-wrap:wrap;margin-top:18px}
+.pricing-card{background:var(--card);padding:18px;border-radius:12px;flex:1;min-width:200px;box-shadow:var(--shadow)}
+.pricing-card.featured{border:2px solid rgba(208,64,64,0.08)}
+
+/* contact form */
+.gf-contact .gf-form{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.form-row label{display:block;font-weight:700;margin-bottom:6px}
+input[type="text"],input[type="email"],input[type="tel"],select,textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #e6eef8;background:#fff;font-size:15px;outline:none}
+textarea{min-height:120px}
+.form-actions{display:flex;align-items:center;gap:16px;margin-top:12px}
+.muted-note{color:var(--muted);font-size:13px}
+
+/* footer */
+.gf-footer{padding:20px 0;background:transparent;color:var(--muted);border-top:1px solid rgba(0,0,0,0.04)}
+.footer-row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+
+/* whatsapp */
+.gf-whatsapp{position:fixed;right:18px;bottom:18px;background:var(--accent);color:#fff;padding:10px 14px;border-radius:999px;display:flex;align-items:center;gap:10px;text-decoration:none;box-shadow:0 12px 30px rgba(11,120,255,0.14);z-index:9999}
+.gf-whatsapp svg{width:18px;height:18px;display:block}
 
 /* responsive */
-@media(max-width:880px){
- .hero-inner{flex-direction:column}
- .hero-media img{width:86%}
- .grid-2{grid-template-columns:1fr}
+@media(max-width:960px){
+  .hero-inner{grid-template-columns:1fr;gap:18px}
+  .program-grid{grid-template-columns:1fr}
+  .trainers-grid{grid-template-columns:1fr}
+  .program-grid, .trainers-grid{gap:12px}
+  .gf-nav{display:none}
+  .gf-hamburger{display:block}
+  .footer-row{flex-direction:column;align-items:flex-start;gap:8px}
 }
