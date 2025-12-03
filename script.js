@@ -113,11 +113,3 @@
   }
 })();
 ```0
-// Dark Mode Toggle
-document.getElementById("theme-toggle").addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-
-    // Button text change
-    const btn = document.getElementById("theme-toggle");
-    btn.textContent = document.body.classList.contains("dark") ? "Light" : "Dark";
-});
