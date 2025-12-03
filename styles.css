@@ -318,3 +318,18 @@ body.dark .card {
 body.dark nav a {
     color: #fff;
 }
+.pay-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px 20px;
+    background: #007bff;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.pay-btn:hover {
+    background: #005dd1;
+}
