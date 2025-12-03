@@ -293,20 +293,48 @@ textarea{
     grid-template-columns:1fr;
   }
 }
-:root {
-  --bg: #f5f8fb;
-  --text: #0f1724;
+/* ---------------- DARK MODE ---------------- */
+
+.dark-mode {
+  background-color: #0d1117;
+  color: #ffffff;
 }
 
-body.dark {
-  --bg: #0b1220;
-  --text: #e6eef8;
+.dark-mode .site-header {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
 }
 
-body {
-  background: var(--bg);
-  color: var(--text);
+.dark-mode .nav-link {
+  color: #ffffff;
 }
+
+.dark-mode .btn {
+  background: #ffffff;
+  color: #000000;
+}
+
+.dark-mode .card {
+  background: #1a1f24;
+  color: #ffffff;
+}
+
+.dark-mode .pricing .plan {
+  background: #1a1f24;
+  color: #ffffff;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p {
+  color: #ffffff;
+}
+
+.dark-mode .brand {
+  color: #ffffff;
+}
+
 .pay-btn {
     display: inline-block;
     margin-top: 12px;
