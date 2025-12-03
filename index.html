@@ -21,22 +21,27 @@
 
 <body>
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/">Dilraj</a>
+  <div class="container header-inner">
+    <a class="brand" href="/">Dilraj</a>
 
-      <nav class="nav">
-        <a class="nav-link active" href="#services">Services</a>
-        <a class="nav-link" href="#portfolio">Portfolio</a>
-        <a class="nav-link" href="#contact">Contact</a>
-      </nav>
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="nav-link active" href="#services">Services</a>
+      <a class="nav-link" href="#portfolio">Portfolio</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
 
-      <button id="themeToggle" class="btn small" aria-pressed="false">Dark</button>
+    <div class="header-controls">
+      <button id="themeToggle" class="btn small" aria-pressed="false" aria-label="Toggle dark mode" data-theme="light">
+        Dark
+      </button>
 
-      <button id="mobileMenuBtn" class="hamburger" aria-expanded="false">
+      <button id="mobileMenuBtn" class="hamburger" aria-expanded="false" aria-label="Toggle menu">
         <span class="hamburger-box"><span class="hamburger-inner"></span></span>
       </button>
     </div>
-  </header>
+  </div>
+</header>
+```0
 
   <main class="container">
     <section class="hero" id="home">
